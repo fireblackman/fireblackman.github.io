@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/fireblackman.github.io/"/>
-  <updated>2019-02-27T08:45:54.519Z</updated>
+  <updated>2019-02-28T02:15:06.947Z</updated>
   <id>https://github.com/fireblackman.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何独立使用Django的models</title>
+    <link href="https://github.com/fireblackman.github.io/2019/02/28/2019-02-27-django-models/"/>
+    <id>https://github.com/fireblackman.github.io/2019/02/28/2019-02-27-django-models/</id>
+    <published>2019-02-28T02:00:03.000Z</published>
+    <updated>2019-02-28T02:15:06.947Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">pwd = os.path.dirname(os.path.realpath(__file__))</span><br><span class="line"></span><br><span class="line">sys.path.append(pwd+<span class="string">"../"</span>)</span><br><span class="line">os.environ.setdefault(<span class="string">"DJANGO_SETTINGS_MODULE"</span>, <span class="string">"项目名称.settings"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> django</span><br><span class="line">django.setup()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> models <span class="keyword">import</span> model类</span><br><span class="line"></span><br><span class="line">model类.objects.all()</span><br><span class="line">user = model()</span><br><span class="line">user.username = <span class="string">'zhangsir'</span></span><br><span class="line">user.password = <span class="string">'123456'</span></span><br><span class="line">user.save()</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span clas
+      
+    
+    </summary>
+    
+    
+      <category term="Django" scheme="https://github.com/fireblackman.github.io/tags/Django/"/>
+    
+  </entry>
   
   <entry>
     <title>python-basic</title>
