@@ -88,6 +88,26 @@
   </entry>
   
   <entry>
+    <title>rest-framework 中的view视图</title>
+    <link href="https://github.com/fireblackman.github.io/2019/01/11/2019-03-01-django-rest-framework-view/"/>
+    <id>https://github.com/fireblackman.github.io/2019/01/11/2019-03-01-django-rest-framework-view/</id>
+    <published>2019-01-11T12:27:42.000Z</published>
+    <updated>2019-03-06T11:14:28.641Z</updated>
+    
+    <content type="html"><![CDATA[<p>1 django-rest-framework中的view视图总结.</p><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1 django-rest-framework中的view视图总结.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Django" scheme="https://github.com/fireblackman.github.io/tags/Django/"/>
+    
+  </entry>
+  
+  <entry>
     <title>爱学习,爱生活</title>
     <link href="https://github.com/fireblackman.github.io/2019/01/11/article/"/>
     <id>https://github.com/fireblackman.github.io/2019/01/11/article/</id>
@@ -105,30 +125,6 @@
     
     
       <category term="随想" scheme="https://github.com/fireblackman.github.io/tags/%E9%9A%8F%E6%83%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>rest-framework 中的view视图</title>
-    <link href="https://github.com/fireblackman.github.io/2019/01/11/rest-framework-view-2019-03-01/"/>
-    <id>https://github.com/fireblackman.github.io/2019/01/11/rest-framework-view-2019-03-01/</id>
-    <published>2019-01-11T12:27:42.000Z</published>
-    <updated>2019-03-01T15:50:07.262Z</updated>
-    
-    <content type="html"><![CDATA[<a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="Django" scheme="https://github.com/fireblackman.github.io/tags/Django/"/>
     
   </entry>
   
