@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/fireblackman.github.io/"/>
-  <updated>2019-03-01T06:51:15.118Z</updated>
+  <updated>2019-03-06T13:22:57.316Z</updated>
   <id>https://github.com/fireblackman.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>rest-framework view</title>
+    <link href="https://github.com/fireblackman.github.io/2019/03/01/django-rest-framework-view-2019-03-01/"/>
+    <id>https://github.com/fireblackman.github.io/2019/03/01/django-rest-framework-view-2019-03-01/</id>
+    <published>2019-03-01T12:27:42.000Z</published>
+    <updated>2019-03-06T13:22:57.316Z</updated>
+    
+    <content type="html"><![CDATA[<p>1 django-rest-framework中的view视图总结.</p><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1 django-rest-framework中的view视图总结.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Django" scheme="https://github.com/fireblackman.github.io/tags/Django/"/>
+    
+  </entry>
   
   <entry>
     <title>TheRoad Not Taken</title>
@@ -84,26 +104,6 @@
     
     
       <category term="Python" scheme="https://github.com/fireblackman.github.io/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>rest-framework 中的view视图</title>
-    <link href="https://github.com/fireblackman.github.io/2019/01/11/2019-03-01-django-rest-framework-view/"/>
-    <id>https://github.com/fireblackman.github.io/2019/01/11/2019-03-01-django-rest-framework-view/</id>
-    <published>2019-01-11T12:27:42.000Z</published>
-    <updated>2019-03-06T11:14:28.641Z</updated>
-    
-    <content type="html"><![CDATA[<p>1 django-rest-framework中的view视图总结.</p><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1 django-rest-framework中的view视图总结.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Django" scheme="https://github.com/fireblackman.github.io/tags/Django/"/>
     
   </entry>
   
