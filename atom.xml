@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/fireblackman.github.io/"/>
-  <updated>2019-03-06T13:22:57.316Z</updated>
+  <updated>2019-03-06T14:02:38.245Z</updated>
   <id>https://github.com/fireblackman.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://github.com/fireblackman.github.io/2019/03/01/django-rest-framework-view-2019-03-01/"/>
     <id>https://github.com/fireblackman.github.io/2019/03/01/django-rest-framework-view-2019-03-01/</id>
     <published>2019-03-01T12:27:42.000Z</published>
-    <updated>2019-03-06T13:22:57.316Z</updated>
+    <updated>2019-03-06T14:02:38.245Z</updated>
     
     <content type="html"><![CDATA[<p>1 django-rest-framework中的view视图总结.</p><a id="more"></a>]]></content>
     
@@ -32,7 +32,7 @@
     </summary>
     
     
-      <category term="Django" scheme="https://github.com/fireblackman.github.io/tags/Django/"/>
+      <category term="Python" scheme="https://github.com/fireblackman.github.io/tags/Python/"/>
     
   </entry>
   
