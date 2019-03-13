@@ -113,18 +113,18 @@
 
 
 
-  <meta name="description" content="123456789101112131415161718import sysimport ospwd = os.path.dirname(os.path.realpath(__file__))sys.path.append(pwd+&quot;../&quot;)os.environ.setdefault(&quot;DJANGO_SETTINGS_MODULE&quot;, &quot;项目名称.settings&quot;)import djangodj">
-<meta name="keywords" content="Django">
+  <meta name="description" content="有列表: L1 = [2, 4, 6, 7, 5, 9, 1, 3, 8]    实现输出: L2 = [9, 8, 7, 6, 5, 4, 3 ,2 1]  时少使用三种方法实现? 1234567891011121314151617L1 = [2, 4, 6, 7, 5, 9, 1, 3, 8]#方法一: 列表的sort()方法L1.sort()L1.reverse()print(L1)#方法">
+<meta name="keywords" content="web">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何独立使用Django的models">
-<meta property="og:url" content="https://github.com/fireblackman.github.io/2019/02/28/django-models/index.html">
+<meta property="og:title" content="一份全栈面试题">
+<meta property="og:url" content="https://github.com/fireblackman.github.io/2019/03/13/web-questtion-2019-03-13/index.html">
 <meta property="og:site_name" content="zhangsir Blog">
-<meta property="og:description" content="123456789101112131415161718import sysimport ospwd = os.path.dirname(os.path.realpath(__file__))sys.path.append(pwd+&quot;../&quot;)os.environ.setdefault(&quot;DJANGO_SETTINGS_MODULE&quot;, &quot;项目名称.settings&quot;)import djangodj">
+<meta property="og:description" content="有列表: L1 = [2, 4, 6, 7, 5, 9, 1, 3, 8]    实现输出: L2 = [9, 8, 7, 6, 5, 4, 3 ,2 1]  时少使用三种方法实现? 1234567891011121314151617L1 = [2, 4, 6, 7, 5, 9, 1, 3, 8]#方法一: 列表的sort()方法L1.sort()L1.reverse()print(L1)#方法">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-28T02:15:06.947Z">
+<meta property="og:updated_time" content="2019-03-13T08:58:32.981Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何独立使用Django的models">
-<meta name="twitter:description" content="123456789101112131415161718import sysimport ospwd = os.path.dirname(os.path.realpath(__file__))sys.path.append(pwd+&quot;../&quot;)os.environ.setdefault(&quot;DJANGO_SETTINGS_MODULE&quot;, &quot;项目名称.settings&quot;)import djangodj">
+<meta name="twitter:title" content="一份全栈面试题">
+<meta name="twitter:description" content="有列表: L1 = [2, 4, 6, 7, 5, 9, 1, 3, 8]    实现输出: L2 = [9, 8, 7, 6, 5, 4, 3 ,2 1]  时少使用三种方法实现? 1234567891011121314151617L1 = [2, 4, 6, 7, 5, 9, 1, 3, 8]#方法一: 列表的sort()方法L1.sort()L1.reverse()print(L1)#方法">
 
 
 
@@ -133,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="https://github.com/fireblackman.github.io/2019/02/28/django-models/">
+  <link rel="canonical" href="https://github.com/fireblackman.github.io/2019/03/13/web-questtion-2019-03-13/">
 
 
 
@@ -143,7 +143,7 @@
   };
 </script>
 
-  <title>如何独立使用Django的models | zhangsir Blog</title>
+  <title>一份全栈面试题 | zhangsir Blog</title>
   
 
 
@@ -415,7 +415,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/fireblackman.github.io/2019/02/28/django-models/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/fireblackman.github.io/2019/03/13/web-questtion-2019-03-13/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhangsir">
@@ -432,7 +432,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">如何独立使用Django的models
+          <h1 class="post-title" itemprop="name headline">一份全栈面试题
 
               
             
@@ -458,7 +458,7 @@
                 
               
 
-              <time title="创建时间：2019-02-28 10:00:03 / 修改时间：10:15:06" itemprop="dateCreated datePublished" datetime="2019-02-28T10:00:03+08:00">2019-02-28</time>
+              <time title="创建时间：2019-03-13 16:27:42 / 修改时间：16:58:32" itemprop="dateCreated datePublished" datetime="2019-03-13T16:27:42+08:00">2019-03-13</time>
             
 
             
@@ -504,7 +504,45 @@
       
 
       
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">pwd = os.path.dirname(os.path.realpath(__file__))</span><br><span class="line"></span><br><span class="line">sys.path.append(pwd+<span class="string">"../"</span>)</span><br><span class="line">os.environ.setdefault(<span class="string">"DJANGO_SETTINGS_MODULE"</span>, <span class="string">"项目名称.settings"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> django</span><br><span class="line">django.setup()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> models <span class="keyword">import</span> model类</span><br><span class="line"></span><br><span class="line">model类.objects.all()</span><br><span class="line">user = model()</span><br><span class="line">user.username = <span class="string">'zhangsir'</span></span><br><span class="line">user.password = <span class="string">'123456'</span></span><br><span class="line">user.save()</span><br></pre></td></tr></table></figure>
+        <ol>
+<li><p>有列表: L1 = [2, 4, 6, 7, 5, 9, 1, 3, 8]   </p>
+<p>实现输出: L2 = [9, 8, 7, 6, 5, 4, 3 ,2 1]  时少使用三种方法实现?</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">L1 = [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">8</span>]</span><br><span class="line"><span class="comment">#方法一: 列表的sort()方法</span></span><br><span class="line">L1.sort()</span><br><span class="line">L1.reverse()</span><br><span class="line">print(L1)</span><br><span class="line"><span class="comment">#方法二: 内置函数sorted()</span></span><br><span class="line">print(sorted(L1, reverse=<span class="keyword">True</span>))</span><br><span class="line"><span class="comment">#方法三: 冒泡排序</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(L)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(L)):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>, len(L)):</span><br><span class="line">            <span class="keyword">if</span> L[i] &lt; L[j]:</span><br><span class="line">                L[i], L[j] = L[j], L[i]</span><br><span class="line">    <span class="keyword">return</span> L</span><br><span class="line"></span><br><span class="line">print(bubble_sort(L1))</span><br><span class="line"><span class="comment"># [9, 8, 7, 6, 5, 4, 3, 2, 1]</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+</li>
+<li><p>输入:  “aaabaac” , “aa”</p>
+<p>输出:  0, 1, 4</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s1 = <span class="string">'aaabaac'</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(s1)):</span><br><span class="line">    <span class="keyword">if</span> s1[i:i+<span class="number">2</span>] == <span class="string">'aa'</span>:</span><br><span class="line">        print(i)</span><br></pre></td></tr></table></figure>
+<!--more-->
+</li>
+<li><p>c1 = [‘b’,’c’,’b’,’e’,’a’]</p>
+<p>c2 = [‘d’,’a’,’f’,’f’,’c’]</p>
+<p>输出: c3 = [‘a’, ‘b’,’c’,’d’,’e’,’f’]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">c1 = [<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'b'</span>,<span class="string">'e'</span>,<span class="string">'a'</span>]</span><br><span class="line">c2 = [<span class="string">'d'</span>,<span class="string">'a'</span>,<span class="string">'f'</span>,<span class="string">'f'</span>,<span class="string">'c'</span>]</span><br><span class="line"><span class="comment"># 方法一, 使用set集合属性</span></span><br><span class="line">print(sorted(list(set(c1 + c2))))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>找出最长的回文数, 编程语言不限? </p>
+<p>输入: “abccb”</p>
+<p>输出: “bccb”</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">s1 = <span class="string">"abccbc"</span></span><br><span class="line"><span class="comment"># 方法一 遍历所有组合</span></span><br><span class="line">L = []</span><br><span class="line">L1 = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(s1)):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>,len(s1)+<span class="number">1</span>):</span><br><span class="line">        L.append(s1[i:j])</span><br><span class="line"><span class="comment"># 请求长度大于等于2, 且长度为偶数的回文数        </span></span><br><span class="line"><span class="keyword">for</span> e <span class="keyword">in</span> L:</span><br><span class="line">    <span class="keyword">if</span> len(e) &gt;= <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">if</span> len(e)%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">            s1 = e[:int(len(e)/<span class="number">2</span>)]</span><br><span class="line">            s2 = e[<span class="number">-1</span>:int(len(e)/<span class="number">2</span>)<span class="number">-1</span>:<span class="number">-1</span>]</span><br><span class="line">            <span class="keyword">if</span> s1 == s2:</span><br><span class="line">                print(e)</span><br><span class="line">                L1.append(e)</span><br><span class="line"><span class="comment"># 求出长度大于2且为奇数的长度的回文数                </span></span><br><span class="line"><span class="keyword">for</span> e <span class="keyword">in</span> L:</span><br><span class="line">    <span class="keyword">if</span> len(e) &gt;= <span class="number">2</span>:               </span><br><span class="line">        <span class="keyword">if</span> len(e)%<span class="number">2</span> == <span class="number">1</span>:</span><br><span class="line">            s1 = e[:int(len(e)/<span class="number">2</span>)]</span><br><span class="line">            s2 = e[<span class="number">-1</span>:int(len(e)/<span class="number">2</span>):<span class="number">-1</span>]</span><br><span class="line">            <span class="keyword">if</span> s1 == s2:</span><br><span class="line">                print(e)</span><br><span class="line">                L1.append(e)</span><br><span class="line"></span><br><span class="line"> print(L1)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>找出最长的没有重复的最长子字符串, 编程实现, 语言不限</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>楼梯共有15层, 每次可以爬1步或者2步, 编程打印,一共可以有多少种方法爬到楼顶,编程实现,语言不限?</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>求出一个数组中连续的子数组(至少包含一个数字), 而该数组拥有最大的和.</p>
+<p>例: 数组: [-3,1,-3,4,-1,2,1,-5,4], 则最大的连续子数组的为[4, -1, 2, 1], 和为6.</p>
+<p>编程实现, 语言不限.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>网络基础知识</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 画出TCP建立一次连接过程, 和拆除连接的过程</span><br><span class="line"><span class="number">2.</span> 说明TCP, IP, UDP, ARP的功能, 实现原理, 适用场景</span><br><span class="line"><span class="number">3.</span> 请简述如何化解DDOS攻击</span><br><span class="line"><span class="number">4.</span> 请简述如何解决ARP劫持</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>面向对象基本知识</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 解释面向对象下列概念的含义, 功能和适用场景, 如: 继承, 类, 对象, 重载, 覆盖, 接口, 多态</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 请简述两种JVM的实现原理以及优缺点</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 说明JAVA的错误处理机制</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
     </div>
@@ -528,7 +566,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Django/" rel="tag"># Django</a>
+            <a href="/tags/web/" rel="tag"># web</a>
           
         </div>
       
@@ -541,8 +579,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/11/python-Basic/" rel="next" title="python-basic">
-                <i class="fa fa-chevron-left"></i> python-basic
+              <a href="/2019/03/13/spider-questtion-2019-03-13/" rel="next" title="一份爬虫面试题">
+                <i class="fa fa-chevron-left"></i> 一份爬虫面试题
               </a>
             
           </div>
@@ -550,10 +588,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/01/poetry-2019-03-01/" rel="prev" title="TheRoad Not Taken">
-                TheRoad Not Taken <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
