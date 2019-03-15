@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="L = [2,6,4,7,9,1,3,5,8] 1.插入排序12345678910111213def insert_sort(List):	n = len(List)	for i in range(1,n):            # 得到索引		j = i-1                     # 获取当前元素之前的索引		temp = List[i]		while j &amp;gt;= 0:">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python实现8种常用排序算法">
+<meta property="og:url" content="https://github.com/fireblackman.github.io/2019/03/15/sort-2019-3-15/index.html">
+<meta property="og:site_name" content="zhangsir Blog">
+<meta property="og:description" content="L = [2,6,4,7,9,1,3,5,8] 1.插入排序12345678910111213def insert_sort(List):	n = len(List)	for i in range(1,n):            # 得到索引		j = i-1                     # 获取当前元素之前的索引		temp = List[i]		while j &amp;gt;= 0:">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-15T07:18:53.379Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python实现8种常用排序算法">
+<meta name="twitter:description" content="L = [2,6,4,7,9,1,3,5,8] 1.插入排序12345678910111213def insert_sort(List):	n = len(List)	for i in range(1,n):            # 得到索引		j = i-1                     # 获取当前元素之前的索引		temp = List[i]		while j &amp;gt;= 0:">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="zhangsir Blog" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://github.com/fireblackman.github.io/2019/03/15/sort-2019-3-15/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Python实现8种常用排序算法 | zhangsir Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/fireblackman/"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">zhangsir Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">时间是最好的证明</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-python">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/Python/" rel="section"><i class="menu-item-icon fa fa-fw fa-code"></i> <br>Python</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-photo">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/photo/" rel="section"><i class="menu-item-icon fa fa-fw fa-photo"></i> <br>摄影</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-music">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/music/" rel="section"><i class="menu-item-icon fa fa-fw fa-music"></i> <br>音乐</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/fireblackman.github.io/2019/03/15/sort-2019-3-15/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhangsir">
+      <meta itemprop="description" content="learning and life">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhangsir Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python实现8种常用排序算法
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-15 15:15:42 / 修改时间：15:18:53" itemprop="dateCreated datePublished" datetime="2019-03-15T15:15:42+08:00">2019-03-15</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
+<p>L = [2,6,4,7,9,1,3,5,8]</p>
+<h1 id="1-插入排序"><a href="#1-插入排序" class="headerlink" title="1.插入排序"></a>1.插入排序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insert_sort</span><span class="params">(List)</span>:</span></span><br><span class="line">	n = len(List)</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,n):            <span class="comment"># 得到索引</span></span><br><span class="line">		j = i<span class="number">-1</span>                     <span class="comment"># 获取当前元素之前的索引</span></span><br><span class="line">		temp = List[i]</span><br><span class="line">		<span class="keyword">while</span> j &gt;= <span class="number">0</span>:               <span class="comment"># 当索引大于等于时开始循环</span></span><br><span class="line">			<span class="keyword">if</span> temp &lt; List[j]:      <span class="comment"># 当List[i]元素小于之前的元素</span></span><br><span class="line">				List[j+<span class="number">1</span>] = List[j] <span class="comment"># 交换两个元素的位置</span></span><br><span class="line">				List[j] = temp</span><br><span class="line">			j -= <span class="number">1</span>                  <span class="comment"># 继续比较交换后的list[i]和再前一个元素的大小,继续循环</span></span><br><span class="line">	<span class="keyword">return</span> List</span><br><span class="line"></span><br><span class="line">print(insert_sort(L))</span><br></pre></td></tr></table></figure>
+<!--more-->
+<h1 id="2-冒泡排序"><a href="#2-冒泡排序" class="headerlink" title="2.冒泡排序"></a>2.冒泡排序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(List)</span>:</span></span><br><span class="line">	n = len(List)</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">		<span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>, n):</span><br><span class="line">			<span class="keyword">if</span> List[i] &gt; List[j]:</span><br><span class="line">				List[j], List[i] = List[i], List[j]</span><br><span class="line">	<span class="keyword">return</span> List</span><br><span class="line"></span><br><span class="line">print(bubble_sort(L))</span><br></pre></td></tr></table></figure>
+<h1 id="3-快速排序"><a href="#3-快速排序" class="headerlink" title="3.快速排序"></a>3.快速排序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quick_sort</span><span class="params">(List,low,high)</span>:</span></span><br><span class="line">    i=low</span><br><span class="line">    j=high</span><br><span class="line">    <span class="keyword">if</span> i &gt;= j:</span><br><span class="line">        <span class="keyword">return</span> List</span><br><span class="line">    key=List[i]</span><br><span class="line">    <span class="keyword">while</span> i &lt; j:</span><br><span class="line">		<span class="comment"># 当高位游标大于基准值时, 高位游标向左移动</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; j <span class="keyword">and</span> List[j]&gt;=key:</span><br><span class="line">            j = j - <span class="number">1</span></span><br><span class="line">        List[i]=List[j]</span><br><span class="line">		<span class="comment"># 当低位游标指向的值,小于基准值时, 低位游标向右移动</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; j <span class="keyword">and</span> List[i]&lt;=key:</span><br><span class="line">            i = i + <span class="number">1</span></span><br><span class="line">        List[j]=List[i]</span><br><span class="line">    List[i]=key</span><br><span class="line">    quick_sort(List,low,i<span class="number">-1</span>) <span class="comment"># 对基准值左边的未排序队列排序</span></span><br><span class="line">    quick_sort(List,j+<span class="number">1</span>,high)<span class="comment"># 对基准值右边的未排序队列排序</span></span><br><span class="line">    <span class="keyword">return</span> List</span><br><span class="line"></span><br><span class="line">print(quick_sort(L, <span class="number">0</span>, len(L)<span class="number">-1</span>))</span><br></pre></td></tr></table></figure>
+<h1 id="4-选择排序"><a href="#4-选择排序" class="headerlink" title="4.选择排序"></a>4.选择排序</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def select_sort(List):</span><br><span class="line">    length = len(List)</span><br><span class="line">    for i in range(length):   # 得出全部的索引</span><br><span class="line">        min_index=i           # 假设最小的索引</span><br><span class="line">        for j in range(i,length):      # 获取i之后的索引</span><br><span class="line">            if List[j]&lt;List[min_index]:# 比较i 之后的元素与最小元素的大小</span><br><span class="line">                min_index=j            # 如果小于最小元素,那么久交换索引</span><br><span class="line">        List[i],List[min_index]=List[min_index],List[i]  # 交换最小的索引指向的值</span><br><span class="line">    return List</span><br><span class="line"></span><br><span class="line">print(select_sort(L))</span><br></pre></td></tr></table></figure>
+<h1 id="5-归并排序"><a href="#5-归并排序" class="headerlink" title="5.归并排序"></a>5.归并排序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_sort</span><span class="params">(list)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(list)&lt;=<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> list</span><br><span class="line">    <span class="comment"># 根据长度确定中间位置</span></span><br><span class="line">    mid = int(len(list)/<span class="number">2</span>)</span><br><span class="line">    left=merge_sort(list[:mid])</span><br><span class="line">    right=merge_sort(list[mid:])</span><br><span class="line">    <span class="keyword">return</span> merge(left,right)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(list1,list2)</span>:</span></span><br><span class="line">    list=[]</span><br><span class="line">    i,j=<span class="number">0</span>,<span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> i&lt;len(list1) <span class="keyword">and</span> j&lt;len(list2):</span><br><span class="line">        <span class="keyword">if</span> list1[i]&lt;list2[j]:</span><br><span class="line">            list.append(list1[i])</span><br><span class="line">            i=i+<span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> list1[i]&gt;=list2[j]:</span><br><span class="line">            list.append(list2[j])</span><br><span class="line">            j=j+<span class="number">1</span></span><br><span class="line">    list.extend(list1[i:])</span><br><span class="line">    list.extend(list2[j:])</span><br><span class="line">    <span class="keyword">return</span> list</span><br><span class="line"></span><br><span class="line">print(merge_sort(L))</span><br></pre></td></tr></table></figure>
+<h1 id="6-堆排序"><a href="#6-堆排序" class="headerlink" title="6.堆排序"></a>6.堆排序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">adjust_heap</span><span class="params">(List, i, size)</span>:</span></span><br><span class="line">	lchild = <span class="number">2</span> * i + <span class="number">1</span></span><br><span class="line">	rchild = <span class="number">2</span> * i + <span class="number">2</span></span><br><span class="line">	m = i</span><br><span class="line">	<span class="keyword">if</span> i &lt; int(size/<span class="number">2</span>) <span class="keyword">and</span> List[lchild] &gt; List[m]:</span><br><span class="line">		m = lchild</span><br><span class="line">	<span class="keyword">if</span> rchild &lt; size <span class="keyword">and</span> List[rchild] &gt; List[m]:</span><br><span class="line">		m = rchild</span><br><span class="line">	<span class="keyword">if</span> m != i:</span><br><span class="line">		List[m], List[i] = List[i], List[m]</span><br><span class="line">		adjust_heap(List, m, size)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">build_heap</span><span class="params">(List, size)</span>:</span></span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, int(size/<span class="number">2</span>))[::<span class="number">-1</span>]:</span><br><span class="line">		adjust_heap(List, i, size)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">heap_sort</span><span class="params">(List)</span>:</span></span><br><span class="line">	size = len(List)</span><br><span class="line">	build_heap(List, size)</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, size)[::<span class="number">-1</span>]:</span><br><span class="line">		List[<span class="number">0</span>], List[i] = List[i], List[<span class="number">0</span>]</span><br><span class="line">		adjust_heap(List, <span class="number">0</span>, i)</span><br><span class="line">	<span class="keyword">return</span> List</span><br><span class="line"></span><br><span class="line">print(heap_sort(L))</span><br></pre></td></tr></table></figure>
+<h1 id="7-基数排序"><a href="#7-基数排序" class="headerlink" title="7.基数排序"></a>7.基数排序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">radix_sort</span><span class="params">(List, radix=<span class="number">10</span>)</span>:</span></span><br><span class="line">	n = int(math.ceil(math.log(max(List), radix)))</span><br><span class="line">	bucket = [[] <span class="keyword">for</span> i <span class="keyword">in</span> range(radix)]</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">		<span class="keyword">for</span> j <span class="keyword">in</span> List:</span><br><span class="line">			bucket[int(j/(radix**(i<span class="number">-1</span>))) % (radix**i)].append(j)</span><br><span class="line">		<span class="keyword">del</span> List[:]</span><br><span class="line">		<span class="keyword">for</span> x <span class="keyword">in</span> bucket:</span><br><span class="line">			List += x</span><br><span class="line">			<span class="keyword">del</span> x[:]</span><br><span class="line">	<span class="keyword">return</span> List</span><br><span class="line"></span><br><span class="line">print(radix_sort(L))</span><br></pre></td></tr></table></figure>
+<h1 id="8-希尔排序"><a href="#8-希尔排序" class="headerlink" title="8.希尔排序"></a>8.希尔排序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">shell_sort</span><span class="params">(List)</span>:</span></span><br><span class="line">    step = int(len(List)/<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">while</span> step &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(step, int(len(List))):</span><br><span class="line">            <span class="keyword">while</span> i &gt;= step <span class="keyword">and</span> List[i-step] &gt; List[i]:</span><br><span class="line">                List[i], List[i-step] = List[i-step], List[i]</span><br><span class="line">                i -= step</span><br><span class="line">        step = int(step/<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> List</span><br><span class="line"></span><br><span class="line">print(shell_sort(L))</span><br></pre></td></tr></table></figure>
+<p>参考： <a href="https://www.cnblogs.com/wangbin2188/p/6520560.html" target="_blank" rel="noopener">https://www.cnblogs.com/wangbin2188/p/6520560.html</a></p>
+<p>运行环境： python3.7.0</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/13/web-questtion-2019-03-13/" rel="next" title="一份全栈面试题">
+                <i class="fa fa-chevron-left"></i> 一份全栈面试题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpeg" alt="zhangsir">
+            
+              <p class="site-author-name" itemprop="name">zhangsir</p>
+              <p class="site-description motion-element" itemprop="description">learning and life</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/fireblackman" title="GitHub &rarr; https://github.com/fireblackman"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-插入排序"><span class="nav-number">1.</span> <span class="nav-text">1.插入排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-冒泡排序"><span class="nav-number">2.</span> <span class="nav-text">2.冒泡排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-快速排序"><span class="nav-number">3.</span> <span class="nav-text">3.快速排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-选择排序"><span class="nav-number">4.</span> <span class="nav-text">4.选择排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-归并排序"><span class="nav-number">5.</span> <span class="nav-text">5.归并排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-堆排序"><span class="nav-number">6.</span> <span class="nav-text">6.堆排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-基数排序"><span class="nav-number">7.</span> <span class="nav-text">7.基数排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-希尔排序"><span class="nav-number">8.</span> <span class="nav-text">8.希尔排序</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhangsir</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.0</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.0"></script>
+
+  <script src="/js/src/motion.js?v=7.0.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=7.0.0"></script>
+
+
+  
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>
