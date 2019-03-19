@@ -113,18 +113,18 @@
 
 
 
-  <meta name="description" content="learning and life">
-<meta name="keywords" content="Python">
-<meta property="og:type" content="website">
-<meta property="og:title" content="photo">
-<meta property="og:url" content="https://github.com/fireblackman.github.io/photo/index.html">
+  <meta name="description" content="1.什么是门面模式? ​    门面: 它是一个接口, 它知道某个请求可以交由哪个子系统进行处理 ​    客户端: 是实例化门店的类 ​    子系统: 是一个或者一组可以实现不同功能的类的组合">
+<meta name="keywords" content="设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="门面模式">
+<meta property="og:url" content="https://github.com/fireblackman.github.io/2019/03/18/facade-2019-3-18/index.html">
 <meta property="og:site_name" content="zhangsir Blog">
-<meta property="og:description" content="learning and life">
+<meta property="og:description" content="1.什么是门面模式? ​    门面: 它是一个接口, 它知道某个请求可以交由哪个子系统进行处理 ​    客户端: 是实例化门店的类 ​    子系统: 是一个或者一组可以实现不同功能的类的组合">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-27T07:50:22.497Z">
+<meta property="og:updated_time" content="2019-03-19T06:00:08.268Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="photo">
-<meta name="twitter:description" content="learning and life">
+<meta name="twitter:title" content="门面模式">
+<meta name="twitter:description" content="1.什么是门面模式? ​    门面: 它是一个接口, 它知道某个请求可以交由哪个子系统进行处理 ​    客户端: 是实例化门店的类 ​    子系统: 是一个或者一组可以实现不同功能的类的组合">
 
 
 
@@ -133,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="https://github.com/fireblackman.github.io/photo/">
+  <link rel="canonical" href="https://github.com/fireblackman.github.io/2019/03/18/facade-2019-3-18/">
 
 
 
@@ -143,7 +143,7 @@
   };
 </script>
 
-  <title>photo | zhangsir Blog</title>
+  <title>门面模式 | zhangsir Blog</title>
   
 
 
@@ -268,7 +268,7 @@
         
         
           
-          <li class="menu-item menu-item-photo menu-item-active">
+          <li class="menu-item menu-item-photo">
 
     
     
@@ -375,37 +375,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -432,45 +401,222 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/fireblackman.github.io/2019/03/18/facade-2019-3-18/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhangsir">
+      <meta itemprop="description" content="learning and life">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhangsir Blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">photo
-
-</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">门面模式
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-18 18:41:42" itemprop="dateCreated datePublished" datetime="2019-03-18T18:41:42+08:00">2019-03-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-19 14:00:08" itemprop="dateModified" datetime="2019-03-19T14:00:08+08:00">2019-03-19</time>
+              
+            
+          </span>
+
           
-        
-      </div>
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>1.什么是门面模式?</p>
+<p>​    门面: 它是一个接口, 它知道某个请求可以交由哪个子系统进行处理</p>
+<p>​    客户端: 是实例化门店的类</p>
+<p>​    子系统: 是一个或者一组可以实现不同功能的类的组合</p>
+<a id="more"></a>
+<p>2.门面模式的Python实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class Hotelier(object):</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">​</span><br></pre></td></tr></table></figure>
+<p>def <strong>init</strong>(self):<br>    print(“Arranging the Hotel for Marriage? –”)</p>
+<p>def __isAvailable(self):<br>    print(“Is the Hotel free for the event on given day?”)<br>    return True</p>
+<p>def bookHotel(self):<br>    if self.__isAvailable():<br>        print(“Registered the Booking\n\n”)<br>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Florist(object):</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">​</span><br></pre></td></tr></table></figure></p>
+<p>def <strong>init</strong>(self):<br>    print(“Flower Decorations for the Event? –”)</p>
+<p>def setFlowerRequirements(self):<br>    print(“Carnations, Roses and Lilies would be used for Decorations\n\n”)<br>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Caterer(object):</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">​</span><br></pre></td></tr></table></figure></p>
+<p>def <strong>init</strong>(self):<br>    print(“Food Arrangements for the Event –”)</p>
+<p>def setCuisine(self):<br>    print(“Chinese &amp; Continental Cuisine to be served\n\n”)<br>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Musician(object):</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">​</span><br></pre></td></tr></table></figure></p>
+<p>def <strong>init</strong>(self):<br>    print(“Musical Arrangements for the Marriage –”)</p>
+<p>def setMusicType(self):<br>    print(“Jazz and Classical will be played\n\n”)<br>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class EventManager(object):</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">​</span><br></pre></td></tr></table></figure></p>
+<p>def <strong>init</strong>(self):<br>    print(“Event Manager:: Let me talk to the folks\n”)</p>
+<p>def arrange(self):<br>    self.hotelier = Hotelier()<br>    self.hotelier.bookHotel()</p>
+<pre><code>self.florist = Florist()
+self.florist.setFlowerRequirements()
+
+self.caterer = Caterer()
+self.caterer.setCuisine()
+
+self.musician = Musician()
+self.musician.setMusicType()
+</code></pre><p>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class You(object):</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">​</span><br></pre></td></tr></table></figure></p>
+<p>def <strong>init</strong>(self):<br>    print(“You:: Whoa! Marriage Arrangements??!!!”)</p>
+<p>def askEventManager(self):<br>    print(“You:: Let’s Contact the Event Manager\n\n”)<br>    em = EventManager()<br>    em.arrange()</p>
+<p>def <strong>del</strong>(self):<br>    print(“You:: Thanks to Event Manager, all preparations done! Phew!”)<br>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">you = You()</span><br><span class="line">you.askEventManager()</span><br></pre></td></tr></table></figure></p>
+<p>​<br>​    </p>
+<p>3.门面模式的优缺点</p>
+<p>优点：<br>    1.对客户屏蔽子系统组件，减少了客户处理的对象数目并使得子系统使用起来更加容易。通过引入门面模式，客户代码将变得很简单，与之关联的        对象也很少。<br>    2.实现了子系统与客户之间的松耦合关系，这使得子系统的组件变化不会影响到调用它的客户类，只需要调整外观类即可。<br>    3.降低了大型软件系统中的编译依赖性，并简化了系统在不同平台之间的移植过程，因为编译一个子系统一般不需要编译所有其他的子系统。一个        子系统的修改对其他子系统没有任何影响，而且子系统内部变化也不会影响到外观对象。<br>    4.只是提供了一个访问子系统的统一入口，并不影响用户直接使用子系统类。</p>
+<p>缺点：<br>    1.不能很好地限制客户使用子系统类，如果对客户访问子系统类做太多的限制则减少了可变性和灵活性。<br>    2.在不引入抽象外观类的情况下，增加新的子系统可能需要修改外观类或客户端的源代码，违背了“开闭原则”。</p>
+<p>4.最少知识原则</p>
+<p>减少对象之间的交互</p>
+<p>5.使用场景</p>
+<p>1、当要为一个复杂子系统提供一个简单接口时可以使用外观模式。该接口可以满足大多数用户的需求，而且用户也可以越过外观类直接访问子系统。<br>2、客户程序与多个子系统之间存在很大的依赖性。引入外观类将子系统与客户以及其他子系统解耦，可以提高子系统的独立性和可移植性。<br>3、在层次化结构中，可以使用外观模式定义系统中每一层的入口，层与层之间不直接产生联系，而通过外观类建立联系，降低层之间的耦合度。</p>
+<p>参考: </p>
+<p><a href="https://blog.csdn.net/xingjiarong/article/details/50066133" target="_blank" rel="noopener">https://blog.csdn.net/xingjiarong/article/details/50066133</a></p>
+<p>&lt;&lt;python设计模式 第二版&gt;&gt; </p>
+
       
     </div>
-    
-
-
 
     
+
     
     
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/16/factory-patterns-2019-3-16/" rel="next" title="工厂模式">
+                <i class="fa fa-chevron-left"></i> 工厂模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
